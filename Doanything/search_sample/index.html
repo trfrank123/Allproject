@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .skillList .skill.selected {
+      background-color: black;
+      color: white;
+    }
+  </style>
+  <body>
+    <div class="skillList">
+      <button class="skill">Reset</button>
+    </div>
+
+    <script>
+      let skillList = document.querySelector('.skillList')
+      let resetBtn = skillList.querySelector('.skill')
+
+      resetBtn.onclick = () => {
+        skillList.querySelectorAll('.selected').forEach(button => {
+          button.classList.remove('selected')
+        })
+        search()
+      }
+
+      function loadCatList() {
+        let skills = [
+          { id: 1, name: 'Fruit' },
+          { id: 2, name: 'Vegetable' },
+          { id: 3, name: 'Fish' },
+        ]
+
+        for (let skill of skills) {
+          let button = resetBtn.cloneNode(true)
+          button.dataset.id = skill.id
+          button.textContent = skill.name
+          button.onclick = () => {
+            button.classList.toggle('selected')
+            search()
+          }
+          skillList.appendChild(button)
+        }
+        skillList.appendChild(resetBtn)
+      }
+
+      loadCatList()
+      search()
+
+      function search() {
+        console.log('searching...')
+        let params = new URLSearchParams()
+        skillList.querySelectorAll('.selected').forEach(button => {
+          params.append('skill_id', button.dataset.id)
+        })
+        let url = '/jobs/search?' + params
+        console.log(url)
+        fetch(url)
+      }
+    </script>
+  </body>
+</html>

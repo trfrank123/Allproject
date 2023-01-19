@@ -1,0 +1,43 @@
+# Visualize on https://erd.surge.sh
+# or https://quick-erd.surge.sh
+#
+# Relationship Types
+#  -    - one to one
+#  -<   - one to many
+#  >-   - many to one
+#  >-<  - many to many
+#  -0   - one to zero or one
+#  0-   - zero or one to one
+#  0-0  - zero or one to zero or one
+#  -0<  - one to zero or many
+#  >0-  - zero or many to one
+#
+////////////////////////////////////
+
+users
+-
+id serial PK
+username varchar(50) unique
+password_hash varchar(72)
+gender varchar(8)
+nickname varchar(50)
+email varchar(100) unique
+
+
+rolex_info
+-
+id serial PK
+image varchar(150)
+model varchar(70)
+year varchar(4)
+reference_number varchar(20) unique
+price_2018 money
+price_2020 money
+price_2022 money
+
+suggestion
+-
+id serial PK
+user_id FK - user.id
+suggestion varchar(300)
+date timestamp

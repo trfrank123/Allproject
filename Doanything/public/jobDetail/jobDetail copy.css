@@ -1,0 +1,266 @@
+/* @import url(//fonts.googleapis.com/earlyaccess/notosanstc.css);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Helvetica", "Arial", "Noto Sans TC", "黑體-繁", "微軟正黑體",
+    sans-serif !important;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container2 div {
+  outline: 1px solid var(--themColor-orange);
+}
+
+.jobContent2 {
+  border: 3px solid #ff9b21;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  width: clamp(400px, 80%, 1000px);
+} */
+
+#title {
+  text-align: center;
+  margin: 20px;
+  /* outline: 1px solid var(--themColor-blue); */
+  font-size: 50px;
+  position: relative;
+  color: white;
+  padding: 0.3em;
+  background-color: var(--themColor-blue);
+  border-radius: 20px;
+  font: Arial, Helvetica, sans-serif;
+}
+
+.jobContent {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  margin-bottom: 50px;
+  border-top: 5px solid var(--themColor-blue);
+  border-radius: 10px;
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset,
+    rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.jobContent img {
+  max-width: 500px;
+  max-height: 500px;
+}
+
+.jobDetail {
+  width: 70%;
+}
+
+/* .jobDetail ul li {
+  margin-top: 15px;
+  display: flex;
+} */
+
+.upper-part {
+  display: flex;
+}
+
+.left-col {
+  flex-grow: 3;
+}
+
+.left-col div {
+  margin: 10px;
+  padding: 10px;
+  border-left: 5px solid var(--themColor-blue);
+}
+
+.right-col {
+  flex-grow: 1;
+}
+
+.right-col div {
+  margin: 10px;
+  padding: 10px;
+  border-bottom: 5px solid var(--themColor-blue);
+}
+
+.lower-part {
+  display: flex;
+}
+.lower-part div {
+  flex-grow: 1;
+  margin: 10px;
+  padding: 10px;
+  border-left: 5px solid var(--themColor-blue);
+}
+
+#image {
+  display: flex;
+}
+
+.employer {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.jobContent i {
+  margin-right: 5px;
+  color: var(--themColor-blue);
+}
+
+.jobContent h2 {
+  margin-bottom: 10px;
+}
+
+.jobContent h3 {
+  margin: 10px 0;
+}
+
+/* .employer ul li {
+  margin-top: 10px;
+} */
+
+.button-part {
+  display: flex;
+  justify-content: center;
+  border-top: 5px solid lightgrey;
+  padding: 20px;
+}
+
+.button-part button {
+  width: 100px;
+  height: 30px;
+  background-color: white;
+  border-radius: 5px;
+  outline: 3px solid var(--themColor-blue);
+  font-weight: bolder;
+  padding: 8px 8px 30px 8px;
+  margin-right: 20px;
+}
+
+.button-part button:hover {
+  background-color: var(--themColor-blue);
+  color: white;
+}
+
+/* chatroom start */
+.chatroomContainer {
+  position: absolute;
+  bottom: 0px;
+  right: 50px;
+  width: 300px;
+  height: 400px;
+  border-top: 5px solid #ff9b21;
+  border-radius: 15px 15px 0px 0px;
+  background-color: white;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 1px 2px 5px rgb(0, 0, 0, 0.2);
+}
+
+.chatContent {
+  width: 100%;
+  height: 300px;
+  padding: 10px;
+  background-color: white;
+  border-top: 1px solid #dedede;
+  border-radius: 15px 15px 0px 0px;
+  overflow: scroll;
+}
+
+.chatContent ul {
+  width: 100%;
+}
+
+.chatContent li {
+  width: 100%;
+}
+
+.chatContent li p {
+  display: inline-block;
+  line-height: 35px;
+  border-radius: 5px;
+  padding: 0px 10px;
+  margin: 5px 0px;
+  background-color: #dedede;
+}
+
+.chatLeft {
+  text-align: start;
+}
+
+.chatRight {
+  text-align: end;
+}
+
+.chatTargetInfo {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  padding: 0px 10px;
+  position: relative;
+}
+
+.chatTargetInfo #userIcon {
+  width: 35px;
+  height: 35px;
+  margin-right: 10px;
+}
+
+.chatTargetInfo #userName {
+  height: 35px;
+  font-size: 18px;
+  line-height: 35px;
+}
+
+.chatTargetInfo button {
+  position: absolute;
+  right: 10px;
+  height: 35px;
+  width: 35px;
+  border: 0;
+  font-size: 20px;
+  text-align: center;
+  line-height: 35px;
+  background-color: white;
+  cursor: pointer;
+}
+
+.chatInputBox {
+  display: flex;
+  width: 100%;
+  padding: 10px 10px;
+}
+
+.chatInput {
+  width: 100%;
+  height: 45px;
+  border-radius: 15px;
+  background-color: #dedede;
+  outline: none;
+  border: 0;
+  padding: 0px 10px;
+  font-size: 14px;
+}
+
+.chatInputBox button {
+  width: 45px;
+  height: 45px;
+  margin-left: 5px;
+  background-color: white;
+  border: 0;
+  cursor: pointer;
+  text-align: center;
+}
+
+/* chatroom end */

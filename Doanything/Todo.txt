@@ -1,0 +1,48 @@
+***Function***
+server.ts
+user.ts
+post.ts
+accept.ts??
+
+Basic 
+- sign-up (username and password)
+- login
+
+Server Side (API)
+- Call by Visitor
+1. GET all post
+2. GET all post by sorting
+3. GET post by title / id
+4. GET post by category
+5. GET history
+6. POST sign up
+
+- Call by User
+1. Above Visitor function...
+2. POST login
+3. POST logout
+4. PUT change password
+5. GET user profile
+6. POST add post
+7. POST edit post
+8. POST delete post (not allow user to delete post by DELETE method)
+9. POST add post to bookmark list
+
+
+
+Bonus Function (challenge)
+- Call by Admin
+1. All above function...
+2. DELETE, delete the post by id
+3. DELETE, delete all post
+4. POST, create new user (actual to delete post)
+5. DELETE, delete a user 
+6. POST, block a user
+7. POST, unblock a user
+- Chat
+- New post inform
+- Recommend post
+- Rating and comment
+- Google Login
+- make it an app
+- chi/eng translation

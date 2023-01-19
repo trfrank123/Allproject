@@ -1,0 +1,568 @@
+:root {
+    --themColor-orange:#E48F27;
+    --themColor-orange-hover:#ff9b21;
+    --themColor-darkBlue:#0E263E;
+    --themColor-blue:RGB(49,126,242);
+    --shadow-button:1px 2px 5px rgb(0,0,0,0.2);
+    --shadow-cardHover:3px 5px 10px rgb(0,0,0,0.3);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #333;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+.d-f {
+    display: flex;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.container {
+    height: 100%;
+    width: 55vw;
+}
+
+.mb-1 {
+    margin-bottom: 1rem;
+}
+
+.mb-2 {
+    margin-bottom: 2rem;
+}
+
+.mb-3 {
+    margin-bottom: 3rem;
+}
+
+.mt-1 {
+    margin-top: 1rem;
+}
+
+.mt-2 {
+    margin-top: 2rem;
+}
+
+.mt-3 {
+    margin-top: 3rem;
+}
+
+/* headerNav start */
+/* responsive start*/
+@media only screen and (max-width: 1500px) {
+    .container {
+        width: 70vw;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .container {
+        width: 75vw;
+    }
+}
+
+@media only screen and (max-width: 790px) {
+    .header #jobBtn {
+        display: none !important;
+    }
+
+    .jobContainer {
+        justify-content: center;
+    }
+
+    .container {
+        width: 80vw;
+    }
+    .header {
+        justify-content: space-between !important;
+        padding: 0px 20px !important;
+    }
+    .header #userBtn {
+        width: 65% !important;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .header #userBtn, #userInfo {
+        display: none !important;
+    }
+    .header {
+        justify-content: space-between !important;
+    }
+    .container {
+        width: 85vw;
+    }
+    .footerContent {
+        flex-direction: column;
+        align-items: flex-start !important;
+        margin-bottom: 15px;
+    }
+    .footerContent ul {
+        height: 30px !important;
+        display: flex;
+        align-items: center;
+    }
+    .footerContent ul li {
+        min-width: 50px;
+        margin: 0px 5px !important;
+    }
+    .footerContent ul li:first-child {
+        width: 70px;
+    }
+}
+
+/* responsive end*/
+.header {
+    width: 100%;
+    padding: 0 50px;
+    height: 80px;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.header #navMenuBtn {
+    max-width: 100px;
+    width: 5vw;
+    font-size: 25px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.header a img {
+    max-width: 150px;
+    width: 150px;
+}
+
+.header #jobBtn {
+    max-width: 280px;
+    width: 30vw;
+    height: 40px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#userBtn {
+    width: 35vw;
+    height: 40px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#userInfo {
+    width: 40vw;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    display: none;
+}
+
+#userInfo img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit:cover;
+}
+
+#userInfo button {
+    width: 80px;
+    height: 40px;
+    border: 1px solid white;
+    border-radius: 5px;
+    line-height: 40px;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+    background-color: var(--themColor-orange);
+    font-size: 16px;
+    font-weight: 800;
+}
+
+#userInfo button:hover {
+    background-color: var(--themColor-orange-hover);
+}
+
+#userInfo p {
+    margin: 0px 10px;
+    text-align: center;
+}
+
+#userBtn a, #jobBtn a {
+    margin: 0 5px;
+    min-width: 90px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    color: var(--themColor-darkBlue);
+    font-weight: 800;
+    border-radius: 5px;
+    position: relative;
+    z-index: 1;
+    transition: color 0.2s ease-in-out;
+}
+
+#jobBtn a::before, #userBtn a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    border-radius: 5px;
+    background-color: var(--themColor-orange);
+    transition: transform 0.3s ease-in-out;
+    transform: scaleX(0);
+    transform-origin: left;
+    overflow: hidden;
+    box-shadow: var(--shadow-button)
+}
+
+#jobBtn a:hover::before, #userBtn a:hover::before {
+    transform: scaleX(1);
+}
+
+#jobBtn a:hover, #userBtn a:hover {
+    color: white;
+}
+
+/* sign up button */
+#userBtn a:nth-child(2)::before {
+    background-color: var(--themColor-orange);
+    color: white;
+    transform: scaleY(1);
+    transform-origin: bottom;
+}
+
+#userBtn a:nth-child(2):hover::before {
+    transform: scaleY(0);
+}
+
+#userBtn a:nth-child(2) {
+    color: white;
+    border: 1px solid white;
+    transition: border color 0.3s ease-in-out;
+}
+
+#userBtn a:nth-child(2):hover {
+    border: 1px solid var(--themColor-orange);
+    color: var(--themColor-darkBlue);
+}
+
+.header form #searchBtn {
+    width: 80px;
+    height: 30px;
+}
+
+.header form  #searchTitle, #searchLocation {
+    width: 150px;
+    height: 30px;
+    padding: 5px;
+}
+
+/* headerNav end */
+
+/* navMenu start */
+.menuContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.navMenu {
+    position: absolute;
+    left:0px;
+    top: 40px;
+    border: 1px solid lightgray;   
+    display: flex;
+    z-index: 1;
+    background-color: white;
+}
+
+.navMenu ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.navMenu ul li {
+    height: 50px;
+    width: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--themColor-darkBlue);
+    font-weight: 800;
+    font-size: 15px;
+    overflow: hidden;
+}
+
+.navMenu ul li::before {
+    content: '';
+    width: 10px;
+    height: 50px;
+    position: relative;
+    left: -39px;
+    top: -50px;
+    opacity: 0;
+    background-color: var(--themColor-orange);
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.navMenu ul li:hover::before {
+    opacity: 1;
+    top: 0px;
+}
+
+.navMenu ul li i {
+    margin-right: 20px;
+    font-size: 16px;
+}
+
+/* navMenu end */
+
+/* job card start */
+.jobList {
+    display: flex;
+    align-items: center;
+}
+
+.arrowBtn {
+    height: 30px;
+    width: 30px;
+}
+
+.jobContainer {
+    width: 100%;
+    /* min-height: 100vh; */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.jobCard {
+    min-width: 250px;
+    min-height: 250px;
+    max-width: 250px;
+    max-height: 250px;
+    margin: 10px;
+    position: relative;
+    display: flex;
+    background-color: white;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: var(--shadow-button);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: box-shadow 0.1s ease-in-out;
+}
+
+.jobCard #title {
+    font-size: 20px;
+}
+
+.jobCard:hover {
+    box-shadow: var(--shadow-cardHover);
+}
+
+.jobCard ul {
+    list-style-type: none;
+    width: 250px;
+    height: 250px;
+    padding: 15px 20px;
+}
+
+.jobCard ul li {
+    height: 30px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+.jobCard ul li i {
+    margin-right: 10px;
+    color: var(--themColor-darkBlue);
+    width: 23px;
+    height: 23px;
+    line-height: 23px;
+    font-size: 12px;
+    text-align: center;
+    background-color: var(--themColor-orange);
+    color: white;
+    border-radius: 50%;
+}
+
+.jobCard ul li:last-child {
+    height: 60px;
+}
+
+.jobCard ul li:nth-child(2) {
+    color: #555;
+    height: 50px;
+    width: 100%;
+}
+
+.jobCard ul li:first-child {
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.bookmarkBtn {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    height: 20px;
+    width: 20px;
+    text-align: center;
+    line-height: 20px;
+    cursor: pointer;
+    transition: top 0.3s ease-in-out;
+}
+
+.bookmarkBtn i {
+    font-size: 18px;
+    color: var(--themColor-orange);
+}
+
+.bookmarkBtn:hover {
+    top:18px;
+}
+
+.applyBtn {
+    position: absolute;
+    bottom: 15px;
+    right: 30px;
+    width: 90px;
+    height: 30px;
+    line-height: 30px;
+    border: 0;
+    background-color: var(--themColor-orange);
+    color: white;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: var(--shadow-button);
+}
+
+.applyBtn:hover {
+    background-color: var(--themColor-orange-hover);
+}
+
+.jobCard #area {
+    margin-right: 10px;
+}
+
+.jobCard #reward {
+    font-size: 18px;
+    font-weight: 800;
+}
+
+/* job card end */
+
+/* footer start */
+footer {
+    width: 100%;
+    height: 280px;
+    background-color: var(--themColor-darkBlue);
+}
+
+.footerContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footerContent {
+    display: flex;
+    align-items: center;
+}
+
+.footerContent ul {
+    height: 140px;
+    margin: 0px 10px;
+}
+
+.footerContent ul li {
+    color: #a5a5a5;
+    margin-bottom: 10px;
+}
+
+.footerContent ul li:first-child {
+    color: #5d5d5d;
+    font-weight: 600;
+}
+
+.footerMedia i {
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    border-radius: 15%;
+    background-color: #5d5d5d;
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+    margin: 0px 2px;
+}
+
+.footerCopyright i {
+    font-size: 10px;
+    margin-right: 5px;
+    color: #a5a5a5;
+}
+
+.footerCopyright {
+    color: #a5a5a5;
+}
+
+/* footer end */
+
+.toTopBtn {
+    width: 60px;
+    height: 60px;
+    line-height: 75px;
+    border-radius: 50%;
+    border: 1px solid white;
+    cursor: pointer;
+    background-color: white;
+    text-align: center;
+    box-shadow: 1px 2px 5px rgb(0,0,0,0.2);
+    position: fixed;
+    right: 20px;
+    bottom: 100px;
+    display: block;
+  }
+  
+.toTopBtn:hover {
+    border: 1px solid #E48F27;
+}

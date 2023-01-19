@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>萬事通 Do Anything</title>
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="common.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="container">
+        <section class="jobBanner">
+            <div class="bannerContent">
+                <h1>想搵Freelance Job?</h1>
+                <p class="mt-1">開始你的Freelance之旅</p>
+                <form action="/jobList/jobList.html" method="get" class="mt-1">
+                    <div class ="autocomplete">
+                        <input autocomplete="off" id="keyword" class="searchInput" name="keyword" type="text" placeholder="想找什麼工作？">
+                    </div>
+                    <!-- <select id="location" name="location">
+                        <option value="home">在家工作</option>
+                        <option value="HK">香港島</option>
+                        <option value="KL">九龍</option>
+                        <option value="NT">新界</option>
+                      </select> -->
+                    <!-- <input autocomplete="off" id="location" class="searchInput" name="location" type="text" placeholder="想在那裡工作？"> -->
+                    <input id="searchBtn" type="submit" value="搜尋" />
+                </form>
+            </div>
+        </section>
+
+        <section class="skillContainer mb-3">
+            <h1>技能分類</h1>
+            <div class="skillBtn">
+                <button id="resetBtn">
+                    <div class="btnContent">
+                        <svg width="22" height="22" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M18 4H6C4.89543 4 4 4.89543 4 6V18C4 19.1046 4.89543 20 6 20H18C19.1046 20 20 19.1046 20 18V6C20 4.89543 19.1046 4 18 4Z" fill="#E48F27" stroke="#333" stroke-width="3" stroke-linejoin="round"/><path d="M18 28H6C4.89543 28 4 28.8954 4 30V42C4 43.1046 4.89543 44 6 44H18C19.1046 44 20 43.1046 20 42V30C20 28.8954 19.1046 28 18 28Z" fill="#E48F27" stroke="#333" stroke-width="3" stroke-linejoin="round"/><path d="M42 4H30C28.8954 4 28 4.89543 28 6V18C28 19.1046 28.8954 20 30 20H42C43.1046 20 44 19.1046 44 18V6C44 4.89543 43.1046 4 42 4Z" fill="#E48F27" stroke="#333" stroke-width="3" stroke-linejoin="round"/><path d="M28 28H44" stroke="#333" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M36 36H44" stroke="#333" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M28 44H44" stroke="#333" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        <p>所有</p>
+                    </div>
+                </button>
+            </div>
+        </section>
+
+        <section class="jobListContainer mb-2">
+            <h1 class="mb-1">工作類別</h1>
+            <h3 id="urgentTag" class="mt-3">緊急</h3>
+            <div class="jobList mt-1">
+                <button id="urgentLeft" class="arrowBtn"><i class="fa-solid fa-arrow-left"></i></button>
+                <div id="urgentJob" class="cardContainer">
+                    <div class="jobCard">
+                        <div onclick="handleBookmark(event)" class="bookmarkBtn">
+                            <i id="bookmark_regular" class="fa-regular fa-heart"></i>
+                        </div>
+                        <ul onclick="getDetail(event)" class="cardContent">
+                            <li id="title">title</li>
+                            <li><p id="detail">{detail}</p></li>
+                            <li><i class="fa-solid fa-gear"></i><p id="skill">{skill}</p></li>
+                            <li>
+                                <i class="fa-solid fa-location-dot"></i>
+                                <p id="area">{area}</p>
+                                <p id="location">{location}</p>
+                            </li>
+                            <li><i class="fa-solid fa-calendar-days"></i><p id="deadline">{deadline}</p></li>
+                            <li>
+                                <p id="reward">${reward}</p>
+                            </li>
+                        </ul>
+                        <button onclick="applyJob(event)" class="applyBtn">接受工作</button>
+                    </div>
+                </div>
+                <button id="urgentRight" class="arrowBtn"><i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+
+            <h3 class="mt-3">一般</h3>
+            <div class="jobList mt-1">
+                <button id="normalLeft" class="arrowBtn arrowLeft" ><i class="fa-solid fa-arrow-left"></i></button>
+                <div id="normalJob" class="cardContainer"></div>
+                <button id="normalRight" class="arrowBtn"><i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+
+            <h3 class="mt-3">無限期</h3>
+            <div class="jobList mt-1">
+                <button id="infiniteLeft" class="arrowBtn arrowLeft"><i class="fa-solid fa-arrow-left"></i></button>
+                <div id="infiniteJob" class="cardContainer"></div>
+                <button id="infiniteRight" class="arrowBtn"><i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+        </section>
+    </div>
+    <footer class="d-f align-center justify-center mt-2">
+        <div class="footerContainer"><div>
+    </footer>
+    <div class="toTopBtn">
+        <svg width="28" height="28" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13 30L25 18L37 30" stroke="#333" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>    <div class="chatroomContainer">
+    </div>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="/navbar.js"></script>
+    <script src="/main.js"></script>
+    <script src="/footer.js"></script>
+</body>
+</html>

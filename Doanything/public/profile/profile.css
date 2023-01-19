@@ -1,0 +1,99 @@
+:root {
+    --themColor-orange:#E48F27;
+    --themColor-orange-hover:#ff9b21;
+    --themColor-darkBlue:#0E263E;
+    --shadow-button:1px 2px 5px rgb(0,0,0,0.2);
+    --shadow-cardHover:3px 5px 10px rgb(0,0,0,0.3);
+  }
+
+  .profile_image {
+    background-color:#E48F27;
+    border-radius: 50px;
+    box-shadow:var(--shadow-cardHover);
+    padding: 40px;
+
+}
+
+#username{
+    border-radius: 22px;
+    width: 90%;
+    margin: 10px 10px 30px 30px;
+    margin-left: 0;
+    border: 0;
+    height: 30px;
+    background-color: #f2eeeee2;
+    padding: 15px;
+    box-shadow:var(--shadow-cardHover);
+}
+#password{
+    border-radius: 22px;
+    width: 90%;
+    margin: 10px 10px 30px 30px;
+    margin-left: 0;
+    border: 0;
+    height: 30px;
+    background-color: #f2eeeee2;
+    padding: 15px;
+    box-shadow:var(--shadow-cardHover);
+}
+#email{
+    border-radius: 22px;
+    width: 90%;
+    margin: 10px 10px 30px 30px;
+    margin-left: 0;
+    border: 0;
+    height: 30px;
+    background-color: #f2eeeee2;
+    padding: 15px;
+    box-shadow:var(--shadow-cardHover);
+}
+#phone{
+    border-radius: 22px;
+    width: 90%;
+    margin: 10px 10px 30px 30px;
+    margin-left: 0;
+    border: 0;
+    height: 30px;
+    background-color:#f2eeeee2;
+    padding: 15px;
+    box-shadow:var(--shadow-cardHover);
+}
+#nickname{
+    border-radius: 22px;
+    width: 90%;
+    margin: 10px 10px 30px 30px;
+    margin-left: 0;
+    border: 0;
+    height: 30px;
+    background-color: #f2eeeee2;
+    padding: 15px;
+    box-shadow:var(--shadow-cardHover);
+}
+
+#textarea{
+    margin: 10px 10px 10px 10px;
+     border-radius: 10px;
+     margin-left: 0%;
+     background-color: #f2eeeee2;
+}
+
+
+#photo{
+    width: 60px;
+    height: 40px;
+    background-color: #ddd3c8dd;
+    border-radius: 10px;
+    border: 0;
+    box-shadow: var(--shadow-button);
+    }
+
+    #update{
+        width: 60px;
+        height: 40px;
+        background-color: #ddd3c8dd;
+        border-radius: 10px;
+        border: 0;
+        box-shadow: var(--shadow-button);
+    }
+
+

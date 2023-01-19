@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="./signup.css"> -->
+    <link rel="stylesheet" href="../common.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    >
+    <link rel="stylesheet" href="signup.css" />
+    <title>Login</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="loginContainer">
+        <div class="photo">
+          <!-- <img id="loginImg" src="./asset/imgaes/login.svg" alt=""> -->
+        </div>
+        <div class="box"></div>
+        <div class="loginform">
+          <h2></h2>
+          <div id="signUp">
+            <p>已有帳戶</p>
+            <a id="signUpBtn" href="#">回到主頁</a>
+          </div>
+          <form
+            class="signup_image"
+            id="signup-form"
+            action="/signup"
+            method="post"
+            enctype="multipart/form-data"
+          >
+            <label for="username">用戶名稱:</label>
+            <input
+              type="text"
+              id="username"
+              name="username"
+              value=""
+              placeholder="Your user name"
+            />
+            <label for="password">密碼:</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              value=""
+              placeholder="Your password"
+            />
+            <label for="check_password">確認密碼:</label>
+            <input
+              type="check_password"
+              id="check_password"
+              name="check_password"
+              value=""
+              placeholder="check_password"
+            />
+            <label for="email">email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value=""
+              placeholder="Your email"
+            />
+            <!-- <label for="date_of_birth">出生日期</label>
+                    <input type="date_of_birth" id="date_of_birth" name="date_of_birth" value="" placeholder="date_of_birth"> -->
+            <label for="phone">電話號碼</label>
+            <input
+              type="phone"
+              id="phone"
+              name="phone"
+              value=""
+              placeholder="phone number"
+            />
+            <label for="nickname">別名</label>
+            <input
+              type="nickname"
+              id="nickname"
+              name="nickname"
+              value=""
+              placeholder="nickname"
+            />
+            <label for="intro">intro</label>
+            <textarea name="intro" id="textarea" cols="30" rows="10"></textarea>
+            <!-- <button class="photo"  id ="photo" name="photo">上傳</button> -->
+            <input type="file" id="photo" name="photo" />
+            <a href="#">忘記密碼</a>
+
+            <input type="submit" value="註冊" id="signUp" />
+          </form>
+        </div>
+        <div id="contact-result"></div>
+        <!-- <img id="questionImg" src="./asset/imgaes/question.svg"> -->
+      </div>
+    </div>
+    <script src="../navbar.js"></script>
+    <script src="./signup.js"></script>
+  </body>
+</html>

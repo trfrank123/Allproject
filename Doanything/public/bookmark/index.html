@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的收藏 Book Mark</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../common.css">
+    <link rel="stylesheet" href="./bookmark.css">
+</head>
+<body>
+    <div class="container">
+        <h1>我的收藏</h1>
+        <div class="jobListContainer">
+            <div class="jobContainer">
+                <div class="jobCard">
+                    <div onclick="deleteBookmark(event)" class="bookmarkBtn"><i class="fa-solid fa-heart"></i></div>
+                    <ul onclick="getDetail(event)" class="cardContent">
+                        <li id="title">title</li>
+                        <li><p id="detail">{detail}</p></li>
+                        <li><i class="fa-solid fa-gear"></i><p id="skill">{skill}</p></li>
+                        <li>
+                            <i class="fa-solid fa-location-dot"></i>
+                            <p id="area">{area}</p>
+                            <p id="location">{location}</p>
+                        </li>
+                        <li><i class="fa-solid fa-calendar-days"></i><p id="deadline">{deadline}</p></li>
+                        <li>
+                            <p id="reward">${reward}</p>
+                        </li>
+                    </ul>
+                    <button onclick="applyJob(event)" class="applyBtn">接受工作</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="d-f align-center justify-center mt-2">
+        <div class="footerContainer"><div>
+    </footer>
+    <div class="toTopBtn">
+        <svg width="28" height="28" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13 30L25 18L37 30" stroke="#333" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>    <div class="chatroomContainer">
+    </div>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../footer.js"></script>
+    <script src="../navbar.js"></script>
+    <script src="./bookmark.js"></script>
+</body>
+</html>

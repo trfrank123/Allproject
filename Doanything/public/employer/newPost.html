@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- quill -->
+    <link
+      href="https://cdn.quilljs.com/1.3.6/quill.snow.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../common.css" />
+  </head>
+  <body>
+    <script src="../navbar.js"></script>
+    <h1>我要出Job</h1>
+    <form
+      name="postjob"
+      id="postjob"
+      method="post"
+      action="/post"
+      enctype="multipart/form-data"
+      onsubmit="DoSubmit();"
+    >
+      <table class="styled-table">
+        <thead>
+          <tr>
+            <th>項目</th>
+            <th>內容</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><label for="title">工作標題*</label></td>
+            <td>
+              <input
+                type="text"
+                name="title"
+                id="title"
+                required
+              />
+            </td>
+          </tr>
+          
+          <tr>
+            <td><label for="reward">報酬*</label></td>
+            <td>
+              <input
+                type="text"
+                name="reward"
+                id="reward"
+                required
+              />
+            </td>
+          </tr>
+          
+          <tr>
+            <td><label for="editor">工作內容*</label></td>
+            <td>
+              <div id="editor-container">
+                <div id="editor" name="editor" reqiured>
+                </div>
+
+              </div>
+              <input type="hidden" name="detail" id="detail" />
+            </td>
+          </tr>
+
+          <tr>
+            <td><label for="start_date">開始時間*</label></td>
+            <td>
+              <input
+                type="datetime-local"
+                name="start_time"
+                id="start_time"
+                required
+              />
+            </td>
+          </tr>
+          <tr>
+            <td><label for="deadline">完成時間</label></td>
+            <td>
+              <input
+                type="datetime-local"
+                name="deadline"
+                id="deadline"
+                required
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <label for="location">地點*</label>
+            </td>
+            <td>
+              <select id="location" name="location">
+                <option value=""></option>
+                <option value="4">在家工作</option>
+                <option value="1">香港島</option>
+                <option value="3">九龍</option>
+                <option value="2">新界</option>
+              </select>
+              <!-- <input
+                type="text"
+                name="location"
+                id="location"
+                value="2"
+                required
+              /> -->
+            </td>
+          </tr>
+          <tr>
+            <td><label for="category_id">工作緊急程度*</label></td>
+            <td>
+              <select id="category_id" name="category_id">
+                <option value=""></option>
+                <option value="2">緊急</option>
+                <option value="1">一般</option>
+                <option value="3">無限期</option>
+              </select>
+              <!-- <input
+                type="text"
+                name="category_id"
+                id="category_id"
+                value="1"
+                required
+              /> -->
+            </td>
+          </tr>
+          <tr>
+            <td><label for="skill_id">技能分類*</label></td>
+            <td>
+              <select id="skill_id" name="skill_id">
+                <option value=""></option>
+                <option value="4">攝影</option>
+                <option value="5">教學/教育</option>
+                <option value="6">清潔</option>
+                <option value="7">煮食</option>
+                <option value="8">代買</option>
+                <option value="9">尋人/寵物</option>
+                <option value="10">維修</option>
+                <option value="11">網頁/APP開發</option>
+              </select>
+              <!-- <input
+                type="text"
+                name="skill_id"
+                id="skill_id"
+                value="1"
+                required
+              /> -->
+            </td>
+          </tr>
+          <tr>
+            <td><label for="request_image">上載圖片</label></td>
+            <td>
+              <input type="file" id="request_image" name="request_image" />
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <h6>* required</h6>
+      <div id="submit-container">
+
+        <p><button type="submit">提交</button></p>
+      </div>
+    </form>
+    <!-- Include the Quill library -->
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="newPost.js"></script>
+  </body>
+</html>

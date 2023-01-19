@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+    color: #2F391E;
+    box-sizing: border-box;
+}
+
+div.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* tablet */
+@media only screen and (max-width: 768px) {
+
+}
+
+@media only screen and (max-width:375px) {
+    div.photo {
+        display: none !important;
+    }
+
+    div.loginContainer {
+        width: 90vw !important;
+    }
+
+    div.loginContainer #questionImg {
+        width: 150px !important;
+    }
+
+    div.loginform {
+        width: 100% !important;
+    }
+}
+
+div.loginContainer {
+    position: relative;
+    width: 60vw;
+    height: 70vh;
+    margin-top: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #F9F5F4;
+    border-radius: 20px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+div.photo {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid #F9F5F4;
+    background-color: #F9F5F4;
+    border-radius: 20px 0px 0px 20px;
+}
+
+div.photo #loginImg {
+    width: 80%;
+    max-width: 350px;
+    height: 400px;
+}
+
+div.loginContainer #questionImg {
+    width: 250px;
+    position: absolute;
+    right: -50px;
+    bottom: -30px;
+}
+
+/* form */
+div.loginform {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+div.loginform h2 {
+    font-size: 40px;
+    text-transform: uppercase;
+}
+
+div.loginform form {
+    height: 50%;
+    width: 70%;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+div.loginform #signUp {
+    display: flex;
+}
+
+div.loginform a {
+    color: #F9A825;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+div.loginform #username, #password {
+    height: 40px;
+    width: 100%;
+    border-radius: 15px;
+    padding: 5px 15px 5px 15px;
+    border: 1px solid lightgray;
+    font-size: 15px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);   
+}
+
+div.loginform #login {
+    height: 40px;
+    width: 60%;
+    border-radius: 15px;
+    background-color: white;
+    border: 1px solid lightgray;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    transition: 0.1s linear;
+    cursor: pointer;
+}
+
+div.loginform #login:hover {
+    background-color: #F9A825;
+    color: white;
+}
+
+
+

@@ -1,0 +1,4 @@
+set -e
+git fetch
+git merge origin/main --no-edit 
+git push

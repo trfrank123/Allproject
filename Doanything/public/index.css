@@ -1,0 +1,266 @@
+:root {
+  --themColor-orange:#E48F27;
+  --themColor-orange-hover:#ff9b21;
+  --themColor-darkBlue:#0E263E;
+  --shadow-button:1px 2px 5px rgb(0,0,0,0.2);
+  --shadow-cardHover:3px 5px 10px rgb(0,0,0,0.3);
+}
+
+/* responsive start */
+@media only screen and (max-width: 500px) {
+  .btnContent p {
+    display: none;
+  }
+
+  .skillContainer button {
+    min-width: 45px !important;
+  }
+
+  .skillBtn {
+    grid-template-columns: repeat(auto-fill,minmax(50px, 1fr)) !important;
+  }
+
+  .btnContent svg {
+    margin: 0px !important;
+  }
+
+  .cardContainer {
+    justify-content: flex-start !important;
+    width: 280px !important;
+  }
+
+  .jobBanner form {
+    flex-direction: column;
+    height: 150px !important;
+  }
+
+  .searchInput {
+    margin-bottom: 10px;
+    width: 250px !important;
+    height: 45px !important;
+  }
+
+  #searchBtn {
+    width: 150px !important;
+    height: 45px !important;
+  }
+
+  .jobBanner h1 {
+    font-size: 30px !important;
+  }
+  .cardContainer {
+    padding: 5px !important;
+  }
+  .jobListContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+
+/* responsive end */
+
+/* job banner start */
+.jobBanner {
+  height: 400px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.jobBanner .bannerContent {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+
+.jobBanner h1 {
+  font-size: 50px;
+  font-weight: 400;
+}
+
+.jobBanner p {
+  font-size: 20px;
+}
+
+.jobBanner .searchInput {
+  height: 35px;
+  width: 250px;
+  outline: none;
+  border-radius: 5px;
+  box-shadow: var(--shadow-button);
+  margin-right: 10px;
+  padding: 0 10px;
+  background-color: #0e263e14;
+}
+
+.jobBanner .searchInput:focus {
+  border: 1px solid var(--themColor-orange);
+  background-color: white;
+}
+
+.jobBanner #searchBtn {
+  height: 35px;
+  line-height: 15px;
+  width: 70px;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: var(--shadow-button);
+}
+
+.jobBanner form {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* job banner end */
+/* skill start */
+
+.skillContainer {
+  width: 100%;
+}
+
+.skillContainer button {
+  max-width: 150px;
+  min-height: 45px;
+  border-radius: 15px;
+  font-size: 15px;
+  font-weight: 600;
+  background-color: white;
+  box-shadow: var(--shadow-button);
+  border: 1px solid white;
+  margin: 5px 10px 5px 0px;
+}
+
+.btnContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btnContent svg {
+  margin-right: 10px;
+}
+
+.skillContainer h1 {
+  margin-bottom: 15px;
+}
+
+.skillBtn .active,
+.skillBtn button:hover {
+  border: 1px solid var(--themColor-orange);
+}
+
+.skillBtn {
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(160px, 1fr));
+}
+
+/* skill end */
+/* job list start */
+.jobListContainer {
+  width: 100%;
+}
+
+.cardContainer {
+  width: 100%;
+  height: 300px;
+  padding: 0px 15px 0px 10px;
+  display: flex;
+  align-items: center;
+  overflow: auto;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+.jobList .arrowBtn {
+  min-height: 30px;
+  min-width: 30px;
+  border-radius: 5px;
+  background-color: var(--themColor-darkBlue);
+  border: 0;
+  box-shadow: var(--shadow-button);
+  cursor: pointer;
+}
+
+.jobList .arrowBtn i {
+  color: white;
+}
+
+/* job list end */
+
+/* search box */
+
+#keywordInput {
+  margin-bottom: 3px;
+}
+
+.autocomplete {
+  position: relative;
+  /* display: inline-block; */
+}
+
+input, select{
+  border: 1px solid transparent;
+  background-color: #f1f1f1;
+  padding: 10px;
+  font-size: 16px;
+}
+
+select {
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
+input[type=text] {
+  background-color: #f1f1f1;
+  width: 100%;
+}
+
+input[type=submit] {
+  background-color: var(--themColor-darkBlue);
+  color: white;
+  cursor: pointer;
+}
+
+.autocomplete-items {
+  position: absolute;
+  border: 1px solid #d4d4d4;
+  padding: 1px;
+  z-index: 99;
+  /*position the autocomplete items to be the same width as the container:*/
+  top: 100%;
+  left: 0;
+  right: 4%;
+}
+
+.autocomplete-items div {
+  padding: 10px;
+  cursor: pointer;
+  background-color: #fff;
+  width: 100%;
+  /* border-bottom: 1px solid #d4d4d4;  */
+}
+
+/*when hovering an item:*/
+.autocomplete-items div:hover {
+  /* background-color: #e9e9e9; */
+  background-color: RGB(252, 205, 61);
+}
+
+/*when navigating through the items using the arrow keys:*/
+.autocomplete-active {
+  background-color: RGB(252, 205, 61) !important;
+}
+
+/* search box end*/

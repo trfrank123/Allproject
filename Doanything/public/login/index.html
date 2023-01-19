@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/index.css">
+    <link rel="stylesheet" href="../common.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Login</title>
+</head>
+<body>
+    <div class="container">
+        <div class="loginContainer">
+            <div class="photo">
+                <img id="loginImg" src="./asset/imgaes/login.svg" alt="">
+            </div>
+        <div class="container">
+            <div class="loginform">
+                <div id="signUp">
+                    <h2>登入</h2>
+                    <p>沒有帳戶?</p><a id="signUpBtn" href="#">建立帳號</a>
+                </div>
+                <form action="/api/login" method="post">
+                    <label for="username">用戶名稱:</label>
+                    <input type="text" id="username" name="username" value="" placeholder="Your user name">
+                    <label for="password">密碼:</label>
+                    <input type="password" id="password" name="password" value="" placeholder="Your password">
+                    <a href="#">忘記用戶名稱</a>
+                    <input type="submit" value="登入" id="login">
+                </form>
+            </div>
+            <img id="questionImg" src="./asset/imgaes/question.svg">
+        </div>
+    </div>
+    <script src="./main.js"></script>
+    <script src="../navbar.js"></script>
+    <script src="./login.js"></script>
+</body>
+</html>

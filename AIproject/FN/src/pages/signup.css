@@ -1,0 +1,40 @@
+:root{--shadow-button:1px 2px 5px rgb(0,0,0,0.2);
+    --shadow-cardHover:3px 5px 10px rgb(0,0,0,0.3);
+    --tiemColor-Allring-Apricot:#FFC0A0;
+    --tiemColor-Steel-Plate:#6E767A;
+    --tiemColor-back:#212121;
+  }
+ion-img{
+    height:30px;
+    /* background-color: yellow; */
+}
+
+
+ion-input{
+    /* background-color: #B5B7B6 !important; */
+    border-radius: 10px 10px;
+    /* margin: 20px 20px 20px 5px; */
+    /* margin-right: 30px !important; */
+    /* display: grid; */
+    /* width:20% !important; */
+    /* justify-content: flex!important; */
+    /* border-color:#FDEC7C !important; */
+    }
+
+  /* form{
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    box-shadow:var(--shadow-button);
+} */
+  
+   /* ion-content{
+
+    --ion-background-color:#212121;
+} */
+
+.isFocus{
+    border-bottom:3px solid rgba(208, 167, 126);
+}
+
+

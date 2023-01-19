@@ -1,0 +1,13 @@
+
+.jobContainer {
+    margin-top: 40px;
+}
+
+.jobListContainer {
+    height: 100vh;
+    overflow: auto;
+}
+
+.jobListContainer::-webkit-scrollbar  {
+    display: none;
+}

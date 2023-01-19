@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>搜索工作 Find Job</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../common.css">
+    <link rel="stylesheet" href="jobList.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>所有工作</h1>
+        <div class="searchContainer">
+            <div class="searchBar">
+                <i id="searchIcon" class="fa-solid fa-magnifying-glass"></i>
+                <input id="searchInput" type="text" placeholder="搜索...">
+            </div>
+            <button onclick="changeURL()">搜索</button>
+        </div>
+        <div class="d-f mt-2">
+            <div class="filterContainer">
+                <h3 class="mb-1">篩選選項</h3>
+                <button id="resetBtn" class="mb-1">清除所有篩選</button>
+                <div>
+                    <select name="sorting" id="sorting">
+                        <option value="default">預設排序</option>
+                        <option value="rewardMax">按價位大至小</option>
+                        <option value="rewardMin">按價位小至大</option>
+                        <option value="deadlineAsc">按日期近至遠</option>
+                        <option value="deadlineDesc">按日期遠至近</option>
+                    </select>
+                </div>
+                <div class="filterOptions mt-1">
+                    <div class="categoryFilter">
+                        <h4>工作類別：</h4>
+                        <ul class="mt-1 categoryBtn">
+
+                        </ul>
+                    </div>
+                    <div class="skillFilter mt-2">
+                        <h4>技能類別：</h4>
+                        <ul class="mt-1 skillBtn">
+
+                        </ul>
+                    </div>
+                    <div class="locationFilter mt-2">
+                        <h4>地點：</h4>
+                        <ul class="mt-1 locationBtn">
+
+                        </ul>
+                    </div>
+                    <div class="rewardFilter mt-2">
+                        <h4>價位：</h4>
+                        <div class="d-f justify-center">
+                            <div class="mt-1 d-f align-center">
+                                <svg width="18" height="18" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24 2V46" stroke="#333" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M35 6C35 6 24.9706 6 20 6C15.0294 6 11 10.0294 11 15C11 19.9706 15.0294 24 20 24" stroke="#333" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M13 42C13 42 23.0294 42 28 42C32.9706 42 37 37.9706 37 33C37 28.0294 32.9706 24 28 24H20" stroke="#333" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                <input id="min" type="number" name="lowestReward" placeholder="最低">
+                                <svg width="18" height="22" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M10.5 24L38.5 24" stroke="#333" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                <svg width="18" height="18" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M24 2V46" stroke="#333" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M35 6C35 6 24.9706 6 20 6C15.0294 6 11 10.0294 11 15C11 19.9706 15.0294 24 20 24" stroke="#333" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M13 42C13 42 23.0294 42 28 42C32.9706 42 37 37.9706 37 33C37 28.0294 32.9706 24 28 24H20" stroke="#333" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                <input id="max" type="number" name="highestReward" placeholder="最高">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="jobListContainer">
+                <div class="jobContainer">
+                    <div class="jobCard">
+                        <div onclick="handleBookmark(event)" class="bookmarkBtn">
+                            <i id="bookmark_regular" class="fa-regular fa-heart"></i>
+                        </div>
+                        <ul onclick="getDetail(event)" class="cardContent">
+                            <li id="title">    
+                                {title}</li>
+                            <li><p id="detail">{detail}</p></li>
+                            <li><i class="fa-solid fa-gear"></i><p id="skill">{skill}</p></li>
+                            <li>
+                                <i class="fa-solid fa-location-dot"></i>
+                                <p id="area">{area}</p>
+                                <p id="location">{location}</p>
+                            </li>
+                            <li><i class="fa-solid fa-calendar-days"></i><p id="deadline">{deadline}</p></li>
+                            <li>
+                                <p id="reward">${reward}</p>
+                            </li>
+                        </ul>
+                        <button onclick="applyJob(event)" class="applyBtn">接受工作</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="d-f align-center justify-center mt-2">
+        <div class="footerContainer"><div>
+    </footer>
+    <div class="toTopBtn">
+        <svg width="28" height="28" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M13 30L25 18L37 30" stroke="#333" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>    <div class="chatroomContainer">
+    </div>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../navbar.js"></script>
+    <script src="../footer.js"></script>
+    <script src="./jobList.js"></script>
+</body>
+
+</html>

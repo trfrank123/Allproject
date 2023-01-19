@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>工作詳情 Job Detail</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script src="https://cdn.socket.io/4.5.0/socket.io.min.js"></script>
+    <link rel="stylesheet" href="../common.css" />
+    <link rel="stylesheet" href="./jobDetail.css" />
+  </head>
+  <body>
+
+    <div class="container">
+      <div id="title">
+        <h1>{title}</h1>
+      </div>
+      <div class="jobContent">
+        <div class="upper-part">
+          <div class="left-col">
+            <div>
+              <h2>
+                <i class="fa-regular fa-font-awesome"></i>
+                工作類別：
+              </h2>
+
+              <p id="category">{category_name}</p>
+            </div>
+
+            <div>
+              <h2><i class="fa-regular fa-pen-to-square"></i>詳細內容：</h2>
+
+              <p id="detail">{detail}</p>
+            </div>
+            <div id="postImg">
+              <h2><i class="fa-regular fa-image"></i>圖片：</h2>
+              <p id="image">{image}</p>
+            </div>
+          </div>
+
+          <div class="right-col">
+            <div>
+              <h2><i class="fa-regular fa-dollar"></i> 報酬：</h2>
+              <p id="reward">{reward}</p>
+            </div>
+            <div>
+              <h2><i class="fa-solid fa-user"></i>顧主</h2>
+              <ul class="mt-1">
+                <li>
+                  <h3>
+                    <i class="fa-solid fa-signature"></i>
+                    姓名：
+                  </h3>
+                  <p id="nickname">{nickname}</p>
+                </li>
+
+                <li>
+                  <h3><i class="fa-solid fa-circle-info"></i>簡介：</h3>
+                  <p id="intro">{intro}</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="lower-part">
+          <div>
+            <ul>
+              <li>
+                <h2>
+                  <i class="fa-sharp fa-solid fa-circle-play"></i>工作開始：
+                </h2>
+                <p id="startTime">{start_time}</p>
+              </li>
+              <li>
+                <h2><i class="fa-regular fa-calendar"></i>工作限期：</h2>
+                <p id="deadline">{deadline}</p>
+              </li>
+            </ul>
+          </div>
+          <div>
+            <ul>
+              <li>
+                <h2><i class="fa-solid fa-pen-nib"></i>所需技能：</h2>
+
+                <p id="skill">{skill_name}</p>
+              </li>
+              <li>
+                <h2><i class="fa-solid fa-city"></i>地點：</h2>
+                <p id="location">{location}</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="button-part">
+          <!-- <div class="mt-3"> -->
+          <button id="acceptBtn">
+            <i class="fa-solid fa-check"></i>接受工作
+          </button>
+          <button id="chatBtn"><i class="fa-solid fa-comment"></i>聊天</button>
+          <!-- </div> -->
+        </div>
+      </div>
+    </div>
+
+    <div class="chatroomContainer">
+      <div class="chatTargetInfo">
+        <img
+          id="userIcon"
+          src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
+        />
+        <p id="userName">username</p>
+        <button onclick="closeChatroom()">
+          <i class="fa-solid fa-minus"></i>
+        </button>
+      </div>
+      <div class="chatContent">
+        <ul class="chatBox"></ul>
+      </div>
+      <div class="chatInputBox">
+        <input class="chatInput" type="text" />
+        <button class="sendBtn">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 48 48"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M43 5L29.7 43L22.1 25.9L5 18.3L43 5Z"
+              stroke="#333"
+              stroke-width="4"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M43.0001 5L22.1001 25.9"
+              stroke="#333"
+              stroke-width="4"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <script src="../navbar.js"></script>
+    <script src="./jobDetail.js"></script>
+    <script></script>
+  </body>
+</html>

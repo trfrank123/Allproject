@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+    backend:
+        environment: 
+            DB_USERNAME: regenechan
+            DB_PASSWORD: regenechan 
+            DB_NAME: c22_project4
+            DB_HOST: postgres
+            DB_PORT: 5432
+            PORT: 2000
+        depends_on: 
+            - postgres
+        build:
+            context: ./
+            dockerfile: ./Dockerfile
+        image: "project4backend:latest"
+        ports:
+            - "2000:2000"
+    postgres:
+        image: "postgres:14"
+        environment:
+            POSTGRES_DB: c22_project4
+            POSTGRES_USER: regenechan
+            POSTGRES_PASSWORD: regenechan
+        ports:
+            - "5432:5432"
+        volumes:
+            - ./pgdata:/var/lib/postgresql/data
+
+
+
+

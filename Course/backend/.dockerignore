@@ -1,0 +1,7 @@
+node_modules
+Dockerfile
+.dccache
+package-lock.json
+yarn.lock
+.env
+pgdata

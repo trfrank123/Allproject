@@ -1,0 +1,7 @@
+{
+  "name": "FN",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
